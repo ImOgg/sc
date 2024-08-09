@@ -98,6 +98,16 @@
           if (menuIcon && fullscreenMenu) {
             menuIcon.addEventListener("click", () => {
               fullscreenMenu.classList.toggle("hidden");
+
+              // 选择菜单显示后，绑定关闭按钮事件
+              setTimeout(() => {
+                const closeButton = document.getElementById("closeButton");
+                if (closeButton) {
+                  closeButton.addEventListener("click", () => {
+                    fullscreenMenu.classList.add("hidden");
+                  });
+                }
+              }, 10); // 允许DOM更新
             });
           }
         }

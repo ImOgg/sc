@@ -1,0 +1,40 @@
+<nav
+  class="absolute flex w-full justify-between px-8 py-4 items-center z-[100] md:px-16"
+>
+  <a href="/" class="text-[#fff] text-4xl font-bold flex items-center">
+    星盛
+  </a>
+  <div id="menuIcon" class="pointer cursor-pointer">
+    <img src="icon/menu.svg" alt="menu of SVG" />
+  </div>
+</nav>
+
+<div
+  id="fullscreenMenu"
+  class="fixed inset-0 bg-black bg-opacity-90 text-white flex justify-center items-center z-[200] hidden"
+>
+  <div class="absolute top-8 right-8">
+    <button id="closeButton" class="text-4xl cursor-pointer">&times;</button>
+    <!-- 關閉按鈕 -->
+  </div>
+  <ul class="text-center space-y-8 text-3xl">
+    <li><a href="/">首頁</a></li>
+    <li><a href="/about">關於我們</a></li>
+    <li><a href="/services">服務項目</a></li>
+    <li><a href="/contact">聯絡我們</a></li>
+  </ul>
+</div>
+
+<script>
+  const menuIcon = document.getElementById("menuIcon");
+  const fullscreenMenu = document.getElementById("fullscreenMenu");
+
+  menuIcon.addEventListener("click", () => {
+    fullscreenMenu.classList.toggle("hidden");
+  });
+  closeButton.addEventListener("click", () => {
+
+
+    fullscreenMenu.classList.add("hidden");
+  });
+</script>

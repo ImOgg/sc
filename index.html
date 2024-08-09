@@ -1,83 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="星盛">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="星盛">
-    <meta property="og:description" content="星盛">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
-    <meta property="og:locale" content="zh_TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="星盛" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="星盛" />
+    <meta property="og:description" content="星盛" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:locale" content="zh_TW" />
     <title>星盛</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        @keyframes caret {
-            50% {
-                border-color: transparent;
-            }
+      @keyframes caret {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
         }
 
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-                /* 使用百分比讓其適應屏幕寬度 */
-            }
+        to {
+          width: 100%;
+          /* 使用百分比讓其適應屏幕寬度 */
         }
+      }
 
+      .type {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        /* 先保持不換行 */
+        border-right: 0.05em solid;
+        animation: typing 4s steps(60, end), caret 0.75s steps(1) infinite;
+      }
+
+      @media (max-width: 640px) {
         .type {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            /* 先保持不換行 */
-            border-right: .05em solid;
-            animation: typing 4s steps(60, end), caret 0.75s steps(1) infinite;
+          width: auto;
+          border-right: none;
+          /* 移除光標 */
+          animation: none;
+          /* 禁用打字效果 */
+          white-space: normal;
+          /* 允許換行 */
         }
-
-        @media (max-width: 640px) {
-            .type {
-                width: auto;
-                border-right: none;
-                /* 移除光標 */
-                animation: none;
-                /* 禁用打字效果 */
-                white-space: normal;
-                /* 允許換行 */
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body class="bg-[#1a1a1a] text-white">
     <div class="w-full h-screen bg-[#333] relative">
-        <nav class="absolute flex w-full justify-between px-8 py-4 items-center z-[100] md:px-16">
-            <a href="/" class="text-[#fff] text-4xl font-bold flex items-center">
-                星盛
-            </a>
-            <div>
-                <img src="icon/menu.svg" alt="menu of SVG">
-            </div>
-        </nav>
-        <section class="w-full h-screen bg-[url('images/image_1.jpg')] bg-cover bg-center  relative">
-            <div class="absolute inset-0 bg-black opacity-70"></div> <!-- 加強了半透明遮罩 -->
-            <div class="relative z-10 w-full h-full flex justify-center items-center flex-col text-center px-8 md:px-16">
-                <header class="mb-6">
-                    <h2 class="text-5xl md:text-7xl text-white font-extrabold tracking-widest">
-                        JUST Shine.</h2> <!-- 更大的字體和更粗的字重 -->
-                </header>
-                <article class="max-w-2xl">
-                    <p class="text-lg md:text-2xl text-white tracking-wide leading-relaxed type">以星光般的遠見與智慧，致力於創造無限的可能，成就輝煌的未來。</p>
-                </article>
-            </div>
-        </section>
+      <div id="nav-placeholder"></div>
+      <section
+        class="w-full h-screen bg-[url('images/image_1.jpg')] bg-cover bg-center relative shadow"
+      >
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <!-- 加強了半透明遮罩 -->
+        <div
+          class="relative z-10 w-full h-full flex justify-center items-center flex-col text-center px-8 md:px-16"
+        >
+          <header class="mb-6">
+            <h2
+              class="text-5xl md:text-7xl text-white font-extrabold tracking-widest"
+            >
+              JUST Shine.
+            </h2>
+            <!-- 更大的字體和更粗的字重 -->
+          </header>
+          <article class="max-w-2xl">
+            <p
+              class="text-lg md:text-2xl text-white tracking-wide leading-relaxed type"
+            >
+              以星光般的遠見與智慧，致力於創造無限的可能，成就輝煌的未來。
+            </p>
+          </article>
+        </div>
+      </section>
+      <div id="footer-placeholder"></div>
     </div>
-</body>
+    <script>
+      async function loadHTML(url, elementId) {
+        const response = await fetch(url);
+        const html = await response.text();
+        document.getElementById(elementId).innerHTML = html;
 
+        // 事件绑定在HTML加载完成后进行
+        if (elementId === "nav-placeholder") {
+          const menuIcon = document.getElementById("menuIcon");
+          const fullscreenMenu = document.getElementById("fullscreenMenu");
+
+          if (menuIcon && fullscreenMenu) {
+            menuIcon.addEventListener("click", () => {
+              fullscreenMenu.classList.toggle("hidden");
+            });
+          }
+        }
+      }
+
+      loadHTML("../component/nav.html", "nav-placeholder");
+      loadHTML("../component/footer.html", "footer-placeholder");
+    </script>
+  </body>
 </html>

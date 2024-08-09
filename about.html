@@ -11,7 +11,7 @@
     <meta property="og:image" content="">
     <meta property="og:url" content="">
     <meta property="og:locale" content="zh_TW">
-    <title>星盛</title>
+    <title>星盛 - 公司簡介</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   
@@ -20,20 +20,14 @@
 <body class="bg-[#1a1a1a] text-white">
     <div class="relative min-h-screen">
         <!-- Navigation -->
-        <nav class="absolute flex w-full justify-between px-4 py-4 items-center z-[100] md:px-16">
-            <a href="/" class="text-white text-4xl font-bold">星盛</a>
-            <div>
-                <img src="icon/menu.svg" alt="menu of SVG">
-            </div>
-        </nav>
+        <div id="nav-placeholder"></div>
 
         <!-- Hero Section -->
-        <section class="relative w-full h-[70vh] bg-cover bg-center"
+        <section class="relative w-full h-[70vh] bg-cover bg-center shadow"
             style="background-image: url('images/image_1.jpg');">
             <div class="absolute inset-0 bg-black opacity-70"></div> <!-- 半透明遮罩 -->
             <div class="relative z-10 flex flex-col justify-center items-center h-full">
-                <h1 class="text-5xl md:text-7xl font-bold tracking-widest" data-aos="fade-up">JUST Shine.</h1>
-                <p class="mt-4 text-lg md:text-2xl" data-aos="fade-up">星盛遊戲開發有限公司</p>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-widest" data-aos="fade-up">公司簡介</h1>
             </div>
         </section>
 
@@ -77,11 +71,21 @@
                 </article>
             </section>
         </div>
+        <div id="footer-placeholder"></div>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+        async function loadHTML(url, elementId) {
+            const response = await fetch(url);
+            const html = await response.text();
+            document.getElementById(elementId).innerHTML = html;
+        }
+
+        loadHTML('../component/nav.html', 'nav-placeholder');
+        loadHTML('../component/footer.html', 'footer-placeholder');
     </script>
+
 </body>
 
 </html>

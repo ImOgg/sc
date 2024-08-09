@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="星盛">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="星盛">
+    <meta property="og:description" content="星盛">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:locale" content="zh_TW">
+    <title>星盛 - 服務項目</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+</head>
+
+<body class="bg-[#1a1a1a] text-white">
+    <div class="relative min-h-screen">
+        <!-- Navigation -->
+        <div id="nav-placeholder"></div>
+
+        <!-- Hero Section -->
+        <section class="relative w-full h-[70vh] bg-cover bg-center"
+            style="background-image: url('images/image_1.jpg');">
+            <div class="absolute inset-0 bg-black opacity-70"></div> <!-- 半透明遮罩 -->
+            <div class="relative z-10 flex flex-col justify-center items-center h-full">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-widest" data-aos="fade-up">服務項目</h1>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <div class="w-full min-h-screen flex flex-col justify-center items-center px-4 md:px-16 py-8">
+            <section class="w-full max-w-6xl space-y-8 text-white">
+                <!-- Info Section -->
+                <div class="w-full min-h-screen flex flex-col justify-center items-center px-4 md:px-16 py-8">
+                    <section class="w-full max-w-6xl space-y-8 text-white">
+                        <!-- Info Section -->
+                        <article class="space-y-6 leading-relaxed text-lg md:text-xl">
+                            <h2 class="text-3xl md:text-4xl font-bold">星盛遊戲開發公司：全方位的數位娛樂王國</h2>
+                            <p>
+                                在星盛，我們致力於打造涵蓋多平台的遊戲世界，從PC到移動設備，無論您身處何地，我們都能為您帶來豐富的遊戲體驗。我們將最先進的技術應用於虛擬現實（VR）和增強現實（AR），引領遊戲市場的未來潮流。
+                            </p>
+                            <p>
+                                以系統化流程和精細化技術為基礎，我們不斷創新，開發出多樣化的全平台遊戲產品，為全球玩家提供無與倫比的娛樂享受。星盛始終站在技術的前沿，致力於探索和開發下一代遊戲體驗，以超越您的期待。
+                            </p>
+                        </article>
+                    </section>
+                </div>
+
+                
+            </section>
+        </div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        async function loadHTML(url, elementId) {
+            const response = await fetch(url);
+            const html = await response.text();
+            document.getElementById(elementId).innerHTML = html;
+        }
+
+        loadHTML('../component/nav.html', 'nav-placeholder');
+        loadHTML('../component/footer.html', 'footer-placeholder');
+    </script>
+
+</body>
+
+</html>

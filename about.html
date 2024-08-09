@@ -13,6 +13,8 @@
     <meta property="og:locale" content="zh_TW">
     <title>星盛</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
 </head>
 
 <body class="bg-[#1a1a1a] text-white">
@@ -26,11 +28,12 @@
         </nav>
 
         <!-- Hero Section -->
-        <section class="relative w-full h-[70vh] bg-cover bg-center" style="background-image: url('images/image_1.jpg');">
+        <section class="relative w-full h-[70vh] bg-cover bg-center"
+            style="background-image: url('images/image_1.jpg');">
             <div class="absolute inset-0 bg-black opacity-70"></div> <!-- 半透明遮罩 -->
             <div class="relative z-10 flex flex-col justify-center items-center h-full">
-                <h1 class="text-5xl md:text-7xl font-bold tracking-widest">JUST Shine.</h1>
-                <p class="mt-4 text-lg md:text-2xl">星盛遊戲開發有限公司</p>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-widest" data-aos="fade-up">JUST Shine.</h1>
+                <p class="mt-4 text-lg md:text-2xl" data-aos="fade-up">星盛遊戲開發有限公司</p>
             </div>
         </section>
 
@@ -40,19 +43,19 @@
                 <!-- Info Section -->
                 <article class="flex flex-col md:flex-row gap-8 items-start justify-between">
                     <div class="w-full md:w-1/2 space-y-6">
-                        <div>
+                        <div  data-aos="fade-right">
                             <h3 class="text-lg font-medium">創立日期</h3>
                             <p>2021年6月9日</p>
                         </div>
-                        <div>
+                        <div  data-aos="fade-right">
                             <h3 class="text-lg font-medium">員工總數</h3>
                             <p>500人 (截至2022年12月31日)</p>
                         </div>
-                        <div>
+                        <div  data-aos="fade-right">
                             <h3 class="text-lg font-medium">營運總部</h3>
                             <p>全球設有營運據點（亞洲、北美、歐洲等地）</p>
                         </div>
-                        <div>
+                        <div  data-aos="fade-right">
                             <h3 class="text-lg font-medium">年營收</h3>
                             <p>新台幣1億元 (2022年)</p>
                         </div>
@@ -65,7 +68,8 @@
                 <!-- Company Overview Section -->
                 <article class="space-y-6 text-xl leading-relaxed tracking-wide">
                     <p>
-                        星盛自成立以來，始終以系統化、精細化的開發流程為基礎，結合各類專業領域的最新技術，專注於創造多樣化的遊戲產品。遊戲開發涉及多種平台，涵蓋PC、主機和移動設備，並且積極探索虛擬現實 (VR) 和增強現實 (AR) 技術，以引領未來遊戲市場的潮流。
+                        星盛自成立以來，始終以系統化、精細化的開發流程為基礎，結合各類專業領域的最新技術，專注於創造多樣化的遊戲產品。遊戲開發涉及多種平台，涵蓋PC、主機和移動設備，並且積極探索虛擬現實 (VR)
+                        和增強現實 (AR) 技術，以引領未來遊戲市場的潮流。
                     </p>
                     <p>
                         公司長期本著「創新、品質、玩家至上、社群共建」的經營理念，透過產品多元化、策略聯盟及國際合作，持續擴大企業營運規模，厚植競爭優勢，成為全球遊戲開發領域的領軍企業。星盛的核心價值以「創新技術」和「玩家滿意」為優先，並承諾承擔「社會責任」，這些理念結合形成了星盛追求永續發展的企業文化。
@@ -74,6 +78,10 @@
             </section>
         </div>
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

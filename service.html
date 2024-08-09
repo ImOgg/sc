@@ -73,7 +73,7 @@
       const html = await response.text();
       document.getElementById(elementId).innerHTML = html;
 
-      // 事件绑定在HTML加载完成后进行
+      // 事件綁定在HTML載入完成後進行
       if (elementId === "nav-placeholder") {
         const menuIcon = document.getElementById("menuIcon");
         const fullscreenMenu = document.getElementById("fullscreenMenu");
@@ -82,7 +82,7 @@
           menuIcon.addEventListener("click", () => {
             fullscreenMenu.classList.toggle("hidden");
 
-            // 选择菜单显示后，绑定关闭按钮事件
+            // 選擇選單顯示後，綁定關閉按鈕事件
             setTimeout(() => {
               const closeButton = document.getElementById("closeButton");
               if (closeButton) {
@@ -90,7 +90,7 @@
                   fullscreenMenu.classList.add("hidden");
                 });
               }
-            }, 10); // 允许DOM更新
+            }, 10); 
           });
         }
       }

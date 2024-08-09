@@ -106,7 +106,7 @@
             menuIcon.addEventListener("click", () => {
               fullscreenMenu.classList.toggle("hidden");
 
-              // 选择菜单显示后，绑定关闭按钮事件
+              // 選擇選單顯示後，綁定關閉按鈕事件
               setTimeout(() => {
                 const closeButton = document.getElementById("closeButton");
                 if (closeButton) {
@@ -114,7 +114,7 @@
                     fullscreenMenu.classList.add("hidden");
                   });
                 }
-              }, 10); // 允许DOM更新
+              }, 10); 
             });
           }
         }

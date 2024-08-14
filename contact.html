@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="星盛" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="星盛" />
+    <meta property="og:description" content="星盛" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:locale" content="zh_TW" />
+    <title>星盛 - 服務項目</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      .space-y-6.iframe-scroll-hidden iframe {
+        overflow: hidden;
+      }
+
+      .space-y-6.iframe-scroll-hidden iframe::-webkit-scrollbar {
+        display: none;
+      }
+
+      .space-y-6.iframe-scroll-hidden iframe {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#1a1a1a] text-white">
+    <div class="relative min-h-screen">
+      <!-- Navigation -->
+      <div id="nav-placeholder"></div>
+
+      <!-- Hero Section -->
+      <section
+        class="relative w-full h-[70vh] bg-cover bg-center"
+        style="background-image: url('images/image_1.jpg')"
+      >
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <!-- 半透明遮罩 -->
+        <div
+          class="relative z-10 flex flex-col justify-center items-center h-full"
+        >
+          <h1
+            class="text-5xl md:text-7xl font-bold tracking-widest"
+            data-aos="fade-up"
+          >
+            聯絡我們
+          </h1>
+        </div>
+      </section>
+
+      <!-- Content Section -->
+      <div
+        class="w-full min-h-screen flex flex-col justify-center items-center px-4 md:px-16 py-8"
+      >
+        <section class="w-full max-w-6xl space-y-8 text-white">
+          <!-- Info Section -->
+          <div
+            class="w-full min-h-screen flex flex-col justify-center items-center px-4 md:px-16 py-8"
+          >
+            <section class="w-full max-w-6xl space-y-8 text-white">
+              <!-- Info Section -->
+              <article
+                class="space-y-6 leading-relaxed text-lg md:text-xl iframe-scroll-hidden bg-[#fff] rounded-md p-4"
+              >
+              <p  class="text-[#1a1a1a] text-2xl font-bold border-l-8 border-gray-800 px-4">
+                  預約星盛線上諮詢，由專業顧問與您討論
+              </p>
+                <iframe
+                  class="w-full"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSeOY4iEXMjXC6nE8Wz-XzZgar6h8sYdX00I4sFLWVup5Mq1lw/viewform?embedded=true"
+                  width="640"
+                  height="621"
+                  frameborder="0"
+                  marginheight="0"
+                  marginwidth="0"
+                  scrolling="no"
+                  >載入中…</iframe
+                >
+              </article>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div id="footer-placeholder"></div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+      async function loadHTML(url, elementId) {
+        const response = await fetch(url);
+        const html = await response.text();
+        document.getElementById(elementId).innerHTML = html;
+
+        // 事件綁定在HTML載入完成後進行
+        if (elementId === "nav-placeholder") {
+          const menuIcon = document.getElementById("menuIcon");
+          const fullscreenMenu = document.getElementById("fullscreenMenu");
+
+          if (menuIcon && fullscreenMenu) {
+            menuIcon.addEventListener("click", () => {
+              fullscreenMenu.classList.toggle("hidden");
+
+              // 選擇選單顯示後，綁定關閉按鈕事件
+              setTimeout(() => {
+                const closeButton = document.getElementById("closeButton");
+                if (closeButton) {
+                  closeButton.addEventListener("click", () => {
+                    fullscreenMenu.classList.add("hidden");
+                  });
+                }
+              }, 10);
+            });
+          }
+        }
+      }
+
+      // 本地
+      // loadHTML("../component/nav.html", "nav-placeholder");
+      // loadHTML("../component/footer.html", "footer-placeholder");
+      // github page
+      loadHTML(
+        "https://xingsheng.com.tw/component/nav.html",
+        "nav-placeholder"
+      );
+      loadHTML(
+        "https://xingsheng.com.tw/component/footer.html",
+        "footer-placeholder"
+      );
+    </script>
+  </body>
+</html>

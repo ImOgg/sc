@@ -50,20 +50,26 @@
           >
             <div class="w-full md:w-1/2 space-y-6">
               <div data-aos="fade-right">
-                <h3 class="text-lg font-medium">創立日期</h3>
-                <p>2021年6月9日</p>
+                <h3 class="text-lg font-medium tracking-wide">創立日期</h3>
+                <p class="tracking-wide">2021年10月05日</p>
               </div>
               <div data-aos="fade-right">
-                <h3 class="text-lg font-medium">員工總數</h3>
-                <p>500人 (截至2022年12月31日)</p>
+                <h3 class="text-lg font-medium tracking-wide">員工總數</h3>
+                <p class="tracking-wide">10人</p>
               </div>
               <div data-aos="fade-right">
-                <h3 class="text-lg font-medium">營運總部</h3>
-                <p>全球設有營運據點（亞洲、北美、歐洲等地）</p>
+                <h3 class="text-lg font-medium tracking-wide">營運總部</h3>
+                <a
+                  class="tracking-wide"
+                  href="https://maps.google.com.tw/maps?q=%e6%96%b0%e5%8c%97%e5%b8%82%e4%b8%89%e9%87%8d%e5%8d%80%e6%96%87%e5%8c%96%e5%8c%97%e8%b7%af6%e8%99%9f"
+                  target="_blank"
+                >
+                  新北市三重區文化北路6號
+                </a>
               </div>
               <div data-aos="fade-right">
-                <h3 class="text-lg font-medium">年營收</h3>
-                <p>新台幣1億元 (2022年)</p>
+                <h3 class="text-lg font-medium tracking-wide">年營收</h3>
+                <p class="tracking-wide">新台幣1000萬元</p>
               </div>
             </div>
             <div class="w-full md:w-1/2">
@@ -76,13 +82,15 @@
           </article>
 
           <!-- Company Overview Section -->
-          <article class="space-y-6 text-xl leading-relaxed tracking-wide">
+          <article
+            class="space-y-6 text-xl leading-relaxed tracking-wide"
+            data-aos="fade-up"
+          >
             <p>
-              星盛自成立以來，始終以系統化、精細化的開發流程為基礎，結合各類專業領域的最新技術，專注於創造多樣化的遊戲產品。遊戲開發涉及多種平台，涵蓋PC、主機和移動設備，並且積極探索虛擬現實
-              (VR) 和增強現實 (AR) 技術，以引領未來遊戲市場的潮流。
+              星盛自成立以來，始終秉持系統化、精細化的開發流程，結合資訊軟體服務與產品設計的最新技術，專注於創造多樣化的數位產品和解決方案。我們的服務範疇涵蓋資訊軟體開發、產品設計、以及電子材料的批發與零售，為客戶提供全方位的支援和創新服務。
             </p>
             <p>
-              公司長期本著「創新、品質、玩家至上、社群共建」的經營理念，透過產品多元化、策略聯盟及國際合作，持續擴大企業營運規模，厚植競爭優勢，成為全球遊戲開發領域的領軍企業。星盛的核心價值以「創新技術」和「玩家滿意」為優先，並承諾承擔「社會責任」，這些理念結合形成了星盛追求永續發展的企業文化。
+              公司長期以「創新、品質、客戶至上、合作共贏」為經營理念，透過產品多元化、策略聯盟及國際合作，不斷擴大企業營運規模，強化競爭優勢。我們致力於成為全球資訊軟體和電子材料領域的領軍企業，並以「創新技術」和「客戶滿意」為核心價值，承諾履行社會責任，推動企業的永續發展。
             </p>
           </article>
         </section>
@@ -91,7 +99,10 @@
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        once: true,
+      });
+
       async function loadHTML(url, elementId) {
         const response = await fetch(url);
         const html = await response.text();
@@ -120,12 +131,18 @@
         }
       }
 
-     // 本地
+      // 本地
       // loadHTML("../component/nav.html", "nav-placeholder");
       // loadHTML("../component/footer.html", "footer-placeholder");
       // github page
-      loadHTML("https://xingsheng.com.tw/component/nav.html", "nav-placeholder");
-      loadHTML("https://xingsheng.com.tw/component/footer.html", "footer-placeholder");
+      loadHTML(
+        "https://xingsheng.com.tw/component/nav.html",
+        "nav-placeholder"
+      );
+      loadHTML(
+        "https://xingsheng.com.tw/component/footer.html",
+        "footer-placeholder"
+      );
     </script>
   </body>
 </html>

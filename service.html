@@ -52,13 +52,22 @@
               <!-- Info Section -->
               <article class="space-y-6 leading-relaxed text-lg md:text-xl">
                 <h2 class="text-3xl md:text-4xl font-bold">
-                  星盛遊戲開發公司：全方位的數位娛樂王國
+                  星盛企業社：多元化的專業服務，創新的本土化領導者
                 </h2>
                 <p>
-                  在星盛，我們致力於打造涵蓋多平台的遊戲世界，從PC到移動設備，無論您身處何地，我們都能為您帶來豐富的遊戲體驗。我們將最先進的技術應用於虛擬現實（VR）和增強現實（AR），引領遊戲市場的未來潮流。
+                  自成立以來，星盛企業社始終秉持系統化、精細化的運營流程，結合前沿的技術和創新思維，為台灣地區的客戶提供全方位的專業服務。我們的業務範疇涵蓋多個領域，專注於資訊軟體服務、產品設計、電子材料、智慧財產權、化學原料與製品、以及國際貿易等多種產業，致力於打造跨界合作的全新商業模式。
                 </p>
                 <p>
-                  以系統化流程和精細化技術為基礎，我們不斷創新，開發出多樣化的全平台遊戲產品，為全球玩家提供無與倫比的娛樂享受。星盛始終站在技術的前沿，致力於探索和開發下一代遊戲體驗，以超越您的期待。
+                  我們的資訊軟體服務業務涵蓋從開發到批發和零售，為客戶提供最先進的數位解決方案和技術支援。在產品設計方面，我們追求創新與品質的完美結合，打造符合市場需求的高品質產品。此外，我們的電子材料、化學原料與製品業務在台灣市場中穩步發展，為各行各業提供穩定的供應鏈支持。
+                </p>
+                <p>
+                  星盛還積極拓展無店面零售業務，利用數位平台實現全台灣市場的覆蓋，並通過智慧財產權的保護與管理，確保客戶的創新成果得到最大化的商業價值。我們還深入涉足布疋、衣著、鞋帽、服飾品等領域的批發與零售，憑藉精確的市場定位和國際貿易的優勢，將優質產品輸送到全台各地。
+                </p>
+                <p>
+                  我們不僅專注於當前的業務拓展，還以長遠的眼光布局未來，勇於探索和經營一切法令非禁止或限制的業務，為客戶和合作夥伴創造持續增長的價值。
+                </p>
+                <p>
+                  星盛企業社，憑藉多元化的專業服務和創新的本地化領導地位，與您攜手共創美好未來。
                 </p>
               </article>
             </section>
@@ -69,7 +78,9 @@
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        once: true,
+      });
       async function loadHTML(url, elementId) {
         const response = await fetch(url);
         const html = await response.text();
@@ -98,12 +109,18 @@
         }
       }
 
-     // 本地
+      // 本地
       // loadHTML("../component/nav.html", "nav-placeholder");
       // loadHTML("../component/footer.html", "footer-placeholder");
       // github page
-      loadHTML("https://xingsheng.com.tw/component/nav.html", "nav-placeholder");
-      loadHTML("https://xingsheng.com.tw/component/footer.html", "footer-placeholder");
+      loadHTML(
+        "https://xingsheng.com.tw/component/nav.html",
+        "nav-placeholder"
+      );
+      loadHTML(
+        "https://xingsheng.com.tw/component/footer.html",
+        "footer-placeholder"
+      );
     </script>
   </body>
 </html>
